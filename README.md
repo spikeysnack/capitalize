@@ -1,37 +1,37 @@
-﻿#capitalize
+﻿##capitalize
 
-##DESCRIPTION
+###DESCRIPTION
     Capitalize a list of filenames based upon a set of command-line switches.
 
 
 -----------------------------------------
-###author      : Chris Reid
-###category    : batch renaming
-###copyright   : Copyright 2015
-###country     : United States of America
-###credits     : [Python Software Foundation, Free Software Foundation ]
-###email       : spikeysnack@gmail.com
-###file        : capitalize
-###license     : Free for all non-commercial purposes. 
+####author      : Chris Reid
+####category    : batch renaming
+####copyright   : Copyright 2015
+####country     : United States of America
+####credits     : [Python Software Foundation, Free Software Foundation ]
+####email       : spikeysnack@gmail.com
+####file        : capitalize
+####license     : Free for all non-commercial purposes. 
               Modifications allowed but original attribution must be included. 
               See (http://creativecommons.org/licenses/by-nc/4.0/)
-###maintainer  : chris Reid
-###modification_date : 10 Oct 2015
-###version     : 1.4
-###status      : Release Candidate
+####maintainer  : chris Reid
+####modification_date : 10 Oct 2015
+####version     : 1.4
+####status      : Release Candidate
 -----------------------------------------
 
-##QUICK INSTALL:
+###QUICK INSTALL:
       make
       sudo make install
 The default installation is: 
     capitalize          /usr/local/bin
     capitalize.1        /usr/local/share/man/man1/capitalize.1
     
-##EXPLANATION 
+###EXPLANATION 
 
-	Changing the case or capitalizxation of a group of files and/or directories
-	is a chore and there are few strightforward ways to do it. Capitalize makes it quick and easy.    
+	Changing the case or capitalization of a group of files and/or directories
+	is a chore and there are few straightforward ways to do it. Capitalize makes it quick and easy.    
 
 
     usage: *capitalize*  [options]  [file | file list]

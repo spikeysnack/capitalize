@@ -1,0 +1,13 @@
+/usr/local/lib/python2.7/dist-packages/capitalize/__init__.py
+/usr/local/lib/python2.7/dist-packages/capitalize/capitalize.py
+/usr/local/lib/python2.7/dist-packages/capitalize/__init__.pyc
+/usr/local/lib/python2.7/dist-packages/capitalize/capitalize.pyc
+/usr/local/bin/capitalize.py
+/usr/local/doc/capitalize/base.css
+/usr/local/doc/capitalize/button.png
+/usr/local/doc/capitalize/light.css
+/usr/local/doc/capitalize/capitalize.html
+/usr/local/doc/capitalize/capitalize.png
+/usr/local/man/man1/capitalize.1
+/usr/local/doc/capitalize/README
+/usr/local/lib/python2.7/dist-packages/capitalize-1.2.egg-info

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html><head>
+<title>capitalize</title>
+<meta name="description" content="capitalize a list of filenames" />
+<meta name="keywords" content="batch renamer, text manipulation" />
+<link rel="stylesheet" type="text/css" href="css/light.css" title="preferred" />
+<link rel="alternate stylesheet" type="text/css" href="css/evening.css" title="alternate1" />
+</head>
+<body>
+
+<div id="content">
+<img src="capitalize.png" alt="CAPITALIZE" style={font-family: Georgia; color: #697c52; font-style: italic; font-size: 30px;}>
+
+<verdana>
+
+<h3>
+<div align="middle">version:    1.5         date:   9 Feb 2016 </div>
+
+<h2>NAME</h2>
+capitalize
+<blockquote>
+Capitalize or change case of a list of filenames. 
+</blockquote>
+
+<h2>USAGE</h2>
+<code>
+<font size="4" color="blue">
+<pre>
+capitalize  [options]  [file | file list]
+capitalize  -h
+</pre>
+</font>
+</code>
+<h2>OPTIONS</h2>
+<code> 
+<font size="4" color="blue">
+<pre>
+                    -f         --force         rename files without question (dangerous)
+                    -h         --help          print this message
+                    -i         --interactive   ask for each file before renaming
+                    -l         --lower         uncapitalize all letters in filenames
+                    -r         --recursive     recursively change all filenames in subdirectories
+                    -t         --test          test mode -- do not actually change filenames 
+                    -T         --Title         Capitalize With Titlecase
+                    -u         --upper         CAPITALIZE ALL LETTERS IN FILENAMES
+                    -v         --verbose       print out lots of things as they happen 
+           (hint:  use * for all files in dir)
+
+</pre>
+</font>
+</code> 
+
+<h2>DESCRIPTION</h2><p>
+
+<font color="blue">capitalize</font> changes capitalization of filenames in bulk.
+<p> 
+Its use is straightforward compared to other methods.
+
+<h2>PREREQUISITES</h2>
+<blockquote>
+<pre>
+<font size="4">
+<i>required</i>:
+              python
+
+</font>
+</pre
+</blockquote>
+<h2>QUICK INSTALL</h2>
+<blockquote>
+<pre>
+     make
+     sudo make install
+
+     The default installation is: 
+     FILE             DIR
+<hl>
+     capitalize          /usr/local/bin
+     capitalize.1        /usr/local/share/man/man1/capitalize.1
+     documentation       /usr/local/share/doc/capitalize
+</pre>
+</font>
+</code> 
+</blockquote>
+
+<h2>EXPLANATION</h2>
+<blockquote>
+Changing the case or capitalization of a group of files and/or directories
+<p>
+is a chore, and there are few straightforward ways to do it. 
+<p>
+Capitalize makes it quick and easy.
+
+</blockquote>
+<pre>
+
+The most common use for <font color="blue">capitalize</font> 
+would be for changing the capitalization of
+a group of files in a directory or directory hierarchy.
+
+  
+<h2>INTERACTIVE</h2>
+Interactive mode is the safest if not the most efficient way to use <font color="blue">capitalize</font>. 
+<p>
+It asks the user for a yes or no before each file is renamed.
+<p>
+
+non-interactice mode (default)is quite convenient and fast, 
+but should not be used thoughtlessly,
+or serious messing-up of directories full of files may result.
+
+Test mode is the recommended way to see what would happen. <b><i>Please.</i></b>
+
+
+<h2>BUGS</h2>
+The program will abort if changing the case of a file would overwrite another,
+separate file with the target capitalization in the same directory.
+This could leave a directory hierarchy of files incompletely changed.
+<p>
+
+<h2>FILES</h2>
+<blockquote>
+<pre>
+       /usr/local/bin/capitalize                program binary 
+
+       /usr/local/share/man/man1/capitalize.1   man page for capitalize
+
+       /usr/local/share/doc/capitalize/         documentation for capitalize 
+</pre>
+</blockquote>
+
+<h2>EXAMPLES</h2>
+<pre>
+<blockquote>
+ Change all files to lower case.
+<p>
+<code>
+<font size="4" color="blue">
+    $ capitalize  -l *
+</font>
+</code>
+</pre>
+
+
+
+<h2>COPYRIGHT</h2>
+
+<i>Free for non-commercial use.</i>
+
+
+<h2>AUTHOR</h2><p>
+author      : Chris Reid <a href="mailto:spikeysnack&#64;gmail.com">spikeysnack&#64;gmail.com</a>
+<h2>SEE ALSO</h2>
+<blockquote>
+     crop(1)	rename(1)
+</div>
+</body>
+</html>

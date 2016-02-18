@@ -1,0 +1,4 @@
+include capitalize.py  README LICENSE Makefile capitalize_test.sh 
+recursive-include doc *
+
+

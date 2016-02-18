@@ -1,0 +1,80 @@
+.\" Manpage for capitalize.
+.\" Contact spikeysnack@gmail.com to correct errors or typos.
+.ft Helvetica
+.TH man 1 "07 Feb 2016" "1.2" "capitalize man page"
+
+.SH NAME
+capitalize	\- batch change capitalization of  a list of files 
+
+.SH SYNOPSIS
+\fBcapitalize\fP  [options]  [file | file list]
+           capitalize  -h 
+   
+.SH DESCRIPTION 
+.P
+.TP
+capitalize renames files by changing the capitalization. 
+.P
+It can capitalize as all caps, all lowercase, capitalize first word (default), Titlecase.
+.P
+Recursive traversal of directories is implemented, as well as a test mode.
+.SH OPTIONS
+	-f         --force         rename files without question (dangerous)
+
+	-h         --help          print this message
+
+	-i         --interactive   ask for each file before renaming
+
+	-l         --lower         uncapitalize all letters in filenames
+
+	-r         --recursive     recursively change all filenames in subdirectories
+
+	-t         --test          test mode -- do not actually change filenames
+
+	-T         --Title         Capitalize with titlecase
+
+	-u         --upper         CAPITALIZE ALL LETTERS IN FILENAMES
+
+	-v         --verbose       print out lots of things as they happen 
+
+.SH EXAMPLES
+capitalize  * 
+.RS
+.RS
+.TP
+change recursively down dirs all text files to lowercase  
+.RE
+.RE
+capitalize  -r -l  *.txt
+.RS
+.RS
+.TP
+(hint:  use * for all files in dir) 
+.SH FILES
+.TP
+/usr/local/bin/capitalize
+.RI
+program binary
+.TP
+/usr/local/share/man/man1/capitalize.1 
+.RI
+man page for capitalize
+.TP
+/usr/local/share/doc/capitalize/
+.RI
+documentation for capitalize
+.RE
+.SH SEE ALSO
+rename(1)  
+.SH BUGS
+.P
+
+.RE
+.SH AUTHOR
+.RS
+Chris Reid (spikeysnack@gmail.com)
+.RE
+.SH COPYRIGHT
+.RS
+Free for non-commercial use.
+.RE

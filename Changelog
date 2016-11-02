@@ -1,0 +1,17 @@
+# Change Log
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](http://keepachangelog.com/) 
+and this project adheres to [Semantic Versioning](http://semver.org/).
+
+## [Unreleased]
+### Added
+
+## [1.2] - 2016-11-01
+### Added
+- added eprint to print errs to stderr instead of stdout
+- added debug eprint
+
+
+[Unreleased]: https://github.com/spikeysnack/capitalize.git
+[1.2]: https://github.com/spikeysnack/capitalize.git

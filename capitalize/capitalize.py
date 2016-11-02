@@ -56,8 +56,8 @@ config = {
 # globals
 
 
-debug       = False 
-#debug       = True 
+Debug       = False 
+#Debug       = True 
 force       = False
 verbose     = False
 interactive = False
@@ -68,7 +68,7 @@ recursive   = False
 
 global_options = {
   "force"       : False,
-  "debug"       : False,
+  "Debug"       : False,
   "verbose"     : False,   
   "interactive" : False,
   "test"        : False,
@@ -78,13 +78,27 @@ global_options = {
 
 #-----------------
 # python libraries
+
   
 import os
 import sys
 import getopt 
 import string
 
+#----------------
+# print to stderr
+def eprint(*args):
+  sys.stderr.write(' '.join(map(str,args)) + '\n')
+
+def debug( s ):
+  if Debug: 
+    eprint("[Debug]:\t" + s)
+
+
+
 __all__ = [ "renameError", "safe_rename", "rename" , "yesno", "parse_args" ]
+
+
 
 #----------------------------
 class renameError(Exception):
@@ -132,18 +146,15 @@ def safe_rename( oldname , newname):
   """
   dirstr = ""
 
-  if oldname == newname:
-    if debug:
-      print ("[safe_rename] OLDNAME = NEWNAME" )
+  if oldname == newname:    
+    debug("[safe_rename] OLDNAME = NEWNAME" )
     pass
   else:
 
     try:
-
-      if debug:
-        print( ("[safe_rename]( " + oldname + " , " + newname + " )") )
       
-
+      debug( "[safe_rename]( " + oldname + " , " + newname + " )" )
+      
       if os.path.exists( newname ):
 
         if os.path.isdir(newname):
@@ -163,14 +174,14 @@ def safe_rename( oldname , newname):
         os.rename( oldname, newname ) # this is the only actual potentially destructive op
       
     except renameError as rne:
-      print( (rne.value + " already exists. Not renaming " + oldname  + ".") )
+      debug ( rne.value + " already exists. Not renaming " + oldname  + ".")
 
       if yesno("continue renaming other files?"):
         pass
       else:
         sys.exit(2)
     except OSError as ose:
-      print(( "OSError: " + str(ose)) )
+      debug( "OSError: " + str(ose) )
       pass
 
 
@@ -198,8 +209,7 @@ def rename( action, fn ):
 
   """ dictionary: a dispatch table of commands(string) and  functions(callable) to execute """
   
-  if debug:
-    print( ("[rename] " +  action + " " + fn) )
+  debug("[rename] " +  action + " " + fn) 
 
   if test:
     newname = dtable[action](fn)
@@ -214,8 +224,7 @@ def rename( action, fn ):
     for name in items:
       try:
 
-        if debug:
-          print( ("[rename_all] " + name ) )
+        debug ("[rename_all] " + name ) 
 
         newname = dtable[action](name)
 
@@ -234,16 +243,15 @@ def rename( action, fn ):
 
 
   if os.path.isdir(fn):
-    if debug:
-      print( ("ISDIR ------------------------" + fn) )
+    debug("ISDIR ------------------------" + fn) 
 
     newname = dtable[action](fn)
      
     if recursive:
       for root, dirs, files in os.walk( fn, topdown=False ):
 
-        if debug:
-          print( ("root:\t" + str(root) + "\tdirs:\t" + str(dirs) + "\tfiles:\t" + str(files)) )
+
+        debug("root:\t" + str(root) + "\tdirs:\t" + str(dirs) + "\tfiles:\t" + str(files))
 
         if not test:
           rename_all( root, files)
@@ -252,8 +260,7 @@ def rename( action, fn ):
       safe_rename( fn, newname )
 
     else:
-      if debug:
-        print("[not recursive]")
+      debug("[not recursive]")
 
       newname = dtable[action](fn)
 
@@ -266,14 +273,13 @@ def rename( action, fn ):
         else:
           safe_rename( fn, newname )    
 
-    if debug:
-      print( ("ISDIR ------------------------" + fn) )
+    debug("ISDIR ------------------------" + fn )
  
   elif os.path.isfile(fn) or os.path.islink(fn):
     try:
 
-      if debug:
-        print("isfile(fn) or islink(fn)" )
+
+      debug( "isfile(fn) or islink(fn)" )
 
       newname = dtable[action](fn)
 
@@ -316,10 +322,10 @@ def usage():
            (hint:  use * for all files in dir)
     '''
 
-    print (utext)
+    eprint (utext)
 
     if os.geteuid() == 0:  # remind superuser of danger
-        print ("WARNING -- renaming system files could make your system unusable or even prevent booting!")
+        eprint ("WARNING -- renaming system files could make your system unusable or even prevent booting!")
 
 
 #-------------
@@ -525,8 +531,8 @@ if __name__ == '__main__':
     # parse options and return arglength args
     numargs, args, flags =  parse_args(sys.argv[1:] ) 
 
-    if debug:
-        print ( ("flags:\t" + str(flags))  )
+  
+    debug( "flags:\t" + str(flags) )
 
 #    "options": {
 #        "short": "hiultTv" ,
@@ -575,16 +581,16 @@ if __name__ == '__main__':
 
     if os.geteuid() == 0:  # remind superuser of danger
         if not no_root_warning:
-            print("WARNING -- super user invocation. Use Caution.")
+            eprint("WARNING -- super user invocation. Use Caution.")
 
 
     if (lowercase and uppercase) :
-        print( "OPTIONS ERROR: can't have lower and upper together.")
+        eprint( "OPTIONS ERROR: can't have lower and upper together.")
         usage()
         sys.exit(2)
 
     if (Titlecase and (lowercase or uppercase)):
-        print( "OPTIONS ERROR can't have Titlecase and lower or upper together.")
+        eprint( "OPTIONS ERROR can't have Titlecase and lower or upper together.")
         usage()
         sys.exit(2)
 
@@ -597,8 +603,8 @@ if __name__ == '__main__':
     else:
         action = "capitalize"
 
-    if debug:
-      print( ("thisfile:\t" + thisfile) )
+
+    debug( "thisfile:\t" + thisfile ) 
 
 
     if thisfile in args:

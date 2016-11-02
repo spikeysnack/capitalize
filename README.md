@@ -1,4 +1,6 @@
-﻿##capitalize
+﻿![capitalize](doc/capitalize.png?raw=true  "capitalize")
+
+##capitalize
 
 ###DESCRIPTION
     Capitalize a list of filenames based upon a set of command-line switches.

@@ -54,5 +54,11 @@ The default installation is:
 	  Change all files to lower case.
 
 	  $ capitalize  -l *
+	  Fix bad capitalization.
+	  $ 	  capitalize -Tvt THis\ FIle\ iS\ LEet.JPG 
+	   TEST MODE    THis FIle iS LEet.JPG ==> This File Is Leet.jpg 	TEST MODE
+
+
+
 
   

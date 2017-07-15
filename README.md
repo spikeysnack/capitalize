@@ -30,7 +30,7 @@ The default installation is:
     capitalize          /usr/local/bin
     capitalize.1        /usr/local/share/man/man1/capitalize.1
     
-###EXPLANATION 
+### EXPLANATION 
 
 	Changing the case or capitalization of a group of files and/or directories
 	is a chore and there are few straightforward ways to do it. Capitalize makes it quick and easy.    

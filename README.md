@@ -1,29 +1,29 @@
 ﻿![capitalize](doc/capitalize.png?raw=true  "capitalize")
 
-##capitalize
+## capitalize
 
-###DESCRIPTION
+### DESCRIPTION
     Capitalize a list of filenames based upon a set of command-line switches.
 
 
 -----------------------------------------
-####author      : Chris Reid
-####category    : batch renaming
-####copyright   : Copyright 2015
-####country     : United States of America
-####credits     : [Python Software Foundation, Free Software Foundation ]
-####email       : spikeysnack@gmail.com
-####file        : capitalize
-####license     : Free for all non-commercial purposes. 
+#### author      : Chris Reid
+#### category    : batch renaming
+#### copyright   : Copyright 2015
+#### country     : United States of America
+#### credits     : [Python Software Foundation, Free Software Foundation ]
+#### email       : spikeysnack@gmail.com
+#### file        : capitalize
+#### license     : Free for all non-commercial purposes. 
               Modifications allowed but original attribution must be included. 
               See (http://creativecommons.org/licenses/by-nc/4.0/)
-####maintainer  : chris Reid
-####modification_date : 10 Oct 2015
-####version     : 1.4
-####status      : Release Candidate
+#### maintainer  : chris Reid
+#### modification_date : 10 Oct 2015
+#### version     : 1.4
+#### status      : Release Candidate
 -----------------------------------------
 
-###QUICK INSTALL:
+### QUICK INSTALL:
       make
       sudo make install
 The default installation is: 
@@ -50,7 +50,7 @@ The default installation is:
                     -u         --upper         CAPITALIZE ALL LETTERS IN FILENAMES
                     -v         --verbose       print out lots of things as they happen 
            (hint:  use * for all files in dir)
-##Example:  
+## Example:  
 	  Change all files to lower case.
 
 	  $ capitalize  -l *
